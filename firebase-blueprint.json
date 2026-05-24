@@ -1,0 +1,73 @@
+{
+  "entities": {
+    "Booking": {
+      "title": "Booking",
+      "description": "Represents a reservation for a gaming station",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the booking"
+        },
+        "firstName": {
+          "type": "string",
+          "description": "Player's first name"
+        },
+        "lastName": {
+          "type": "string",
+          "description": "Player's last name"
+        },
+        "email": {
+          "type": "string",
+          "description": "Player's email address"
+        },
+        "stationType": {
+          "type": "string",
+          "enum": ["240HZ GAMING PC", "PS5 LOUNGE"],
+          "description": "Type of gaming station requested"
+        },
+        "date": {
+          "type": "string",
+          "description": "Date of the booked session"
+        },
+        "timeSlot": {
+          "type": "string",
+          "description": "Time slot of the booked session"
+        },
+        "hours": {
+          "type": "number",
+          "description": "Duration of reservation in hours"
+        },
+        "missionDetails": {
+          "type": "string",
+          "description": "Optional notes or selected games"
+        },
+        "paymentMethod": {
+          "type": "string",
+          "enum": ["razorpay", "after_booking"],
+          "description": "Payment approach selected"
+        },
+        "estimatedCost": {
+          "type": "number",
+          "description": "Calculated total cost of reservation"
+        },
+        "timestamp": {
+          "type": "number",
+          "description": "Epoch timestamp of when the reservation was created"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["confirmed", "cancelled", "completed"],
+          "description": "Current status of the reservation"
+        }
+      },
+      "required": ["id", "firstName", "lastName", "email", "stationType", "date", "timeSlot", "hours", "paymentMethod", "estimatedCost", "timestamp", "status"]
+    }
+  },
+  "firestore": {
+    "/bookings/{bookingId}": {
+      "schema": "Booking",
+      "description": "Collection storing gaming station reservations"
+    }
+  }
+}

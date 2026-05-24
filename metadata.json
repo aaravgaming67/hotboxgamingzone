@@ -1,0 +1,6 @@
+{
+  "name": "Hotbox Gaming Lounge",
+  "description": "Mumbai's premier high-end gaming sanctuary with state-of-the-art console bays, racing simulators, elite PC rigs, and real-time station reservation systems.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

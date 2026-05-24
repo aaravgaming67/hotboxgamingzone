@@ -1,0 +1,36 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Global Safety Net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-+]+$');
+    }
+
+    match /bookings/{bookingId} {
+      allow read: if true;
+      allow create: if isValidId(bookingId) 
+                    && request.resource.data.id == bookingId 
+                    && isValidBooking(request.resource.data);
+      allow update, delete: if isValidId(bookingId);
+    }
+
+    function isValidBooking(data) {
+      return data.id is string
+        && data.firstName is string && data.firstName.size() > 0 && data.firstName.size() <= 64
+        && data.lastName is string && data.lastName.size() > 0 && data.lastName.size() <= 64
+        && data.email is string && data.email.size() > 0 && data.email.size() <= 128
+        && (data.stationType == '240HZ GAMING PC' || data.stationType == 'PS5 LOUNGE')
+        && data.date is string && data.date.size() > 0 && data.date.size() <= 32
+        && data.timeSlot is string && data.timeSlot.size() > 0 && data.timeSlot.size() <= 64
+        && (data.hours is int || data.hours is number) && data.hours >= 1 && data.hours <= 12
+        && (data.paymentMethod == 'razorpay' || data.paymentMethod == 'after_booking')
+        && (data.estimatedCost is int || data.estimatedCost is number) && data.estimatedCost >= 0
+        && (data.timestamp is int || data.timestamp is number)
+        && (data.status == 'confirmed' || data.status == 'cancelled' || data.status == 'completed');
+    }
+  }
+}
