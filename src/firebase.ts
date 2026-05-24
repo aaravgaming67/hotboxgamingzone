@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';
-import { getFirestore, doc, getDocFromServer } from 'firebase/firestore';
+import { initializeFirestore, doc, getDocFromServer } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBjJaKI6SXNRlTMhrKIGcDVNOVHUxsjEO4",
@@ -26,8 +26,10 @@ if (typeof window !== 'undefined') {
   }
 }
 
-// Initialize Firestore
-export const db = getFirestore(app);
+// Initialize Firestore with long polling to ensure reliable connections in sandboxed previews
+export const db = initializeFirestore(app, {
+  experimentalForceLongPolling: true,
+});
 
 export enum OperationType {
   CREATE = 'create',
