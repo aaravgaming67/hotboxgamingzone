@@ -16,7 +16,6 @@ import TournamentsSection from './components/TournamentsSection';
 import LocationSection from './components/LocationSection';
 import Footer from './components/Footer';
 import MyBookingsModal from './components/MyBookingsModal';
-import AdminDashboard from './components/AdminDashboard';
 import { Bolt } from 'lucide-react';
 import { db, handleFirestoreError, OperationType } from './firebase';
 import { collection, onSnapshot, setDoc, doc, deleteDoc, query, orderBy } from 'firebase/firestore';
@@ -26,15 +25,6 @@ export default function App() {
   const [selectedStationType, setSelectedStationType] = useState<StationType>('240HZ GAMING PC');
   const [activeSection, setActiveSection] = useState('hero');
   const [isMyBookingsOpen, setIsMyBookingsOpen] = useState(false);
-  const [isAdminMode, setIsAdminMode] = useState(false);
-
-  // Monitor URL params for standalone back-office initialization
-  useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('mode') === 'admin') {
-      setIsAdminMode(true);
-    }
-  }, []);
 
   // Synchronize with Firestore Database in real-time (with localStorage fallback)
   useEffect(() => {
@@ -199,69 +189,55 @@ export default function App() {
         activeSection={activeSection}
         onOpenMyBookings={() => setIsMyBookingsOpen(true)}
         bookingCount={bookings.length}
-        isAdminMode={isAdminMode}
-        onToggleAdminMode={setIsAdminMode}
       />
 
-      {isAdminMode ? (
-        <main className="pt-20 sm:pt-24">
-          <AdminDashboard 
-            bookings={bookings}
-            onClose={() => setIsAdminMode(false)}
-            onCancelBooking={handleCancelBooking}
-          />
-        </main>
-      ) : (
-        <>
-          {/* Main Container flow */}
-          <main className="pt-16 sm:pt-20">
-            
-            {/* Cinematic Hero */}
-            <Hero 
-              onReserveClick={() => handleScrollToSection('booking')}
-              onExploreClick={() => handleScrollToSection('stations')}
-            />
+      {/* Main Container flow */}
+      <main className="pt-16 sm:pt-20">
+        
+        {/* Cinematic Hero */}
+        <Hero 
+          onReserveClick={() => handleScrollToSection('booking')}
+          onExploreClick={() => handleScrollToSection('stations')}
+        />
 
-            {/* Stations Bento overview Grid */}
-            <Stations onStationSelect={handleStationSelectionPreset} />
+        {/* Stations Bento overview Grid */}
+        <Stations onStationSelect={handleStationSelectionPreset} />
 
-            {/* Dynamic Sandbox specs simulator benchmarks */}
-            <SpecsSimulator />
+        {/* Dynamic Sandbox specs simulator benchmarks */}
+        <SpecsSimulator />
 
-            {/* Immersive vibe gallery */}
-            <Gallery />
+        {/* Immersive vibe gallery */}
+        <Gallery />
 
-            {/* Booking dominion form details panel */}
-            <BookingSection 
-              selectedStationType={selectedStationType}
-              onStationTypeChange={(type) => setSelectedStationType(type)}
-              onNewBookingCreated={handleNewBookingCreated}
-            />
+        {/* Booking dominion form details panel */}
+        <BookingSection 
+          selectedStationType={selectedStationType}
+          onStationTypeChange={(type) => setSelectedStationType(type)}
+          onNewBookingCreated={handleNewBookingCreated}
+        />
 
-            {/* Player logs & verification reviews feed */}
-            <ReviewsSection />
+        {/* Player logs & verification reviews feed */}
+        <ReviewsSection />
 
-            {/* Tournaments championships register boards */}
-            <TournamentsSection />
+        {/* Tournaments championships register boards */}
+        <TournamentsSection />
 
-            {/* Base of Operations coordinate details and maps */}
-            <LocationSection />
+        {/* Base of Operations coordinate details and maps */}
+        <LocationSection />
 
-          </main>
+      </main>
 
-          {/* Legal & calendar operations footer */}
-          <Footer />
+      {/* Legal & calendar operations footer */}
+      <Footer />
 
-          {/* FAB - Booking direct shortcut */}
-          <button 
-            onClick={() => handleScrollToSection('booking')}
-            className="fixed bottom-6 right-6 z-[90] p-4 bg-electric-ruby hover:scale-110 hover:rotate-6 active:scale-95 text-pure-white rounded-full shadow-[0_0_20px_rgba(255,0,60,0.6)] hover:shadow-[0_0_30px_rgba(255,0,60,0.9)] transition-all duration-300"
-            title="Reserve Station Now"
-          >
-            <Bolt size={24} className="fill-pure-white" />
-          </button>
-        </>
-      )}
+      {/* FAB - Booking direct shortcut */}
+      <button 
+        onClick={() => handleScrollToSection('booking')}
+        className="fixed bottom-6 right-6 z-[90] p-4 bg-electric-ruby hover:scale-110 hover:rotate-6 active:scale-95 text-pure-white rounded-full shadow-[0_0_20px_rgba(255,0,60,0.6)] hover:shadow-[0_0_30px_rgba(255,0,60,0.9)] transition-all duration-300"
+        title="Reserve Station Now"
+      >
+        <Bolt size={24} className="fill-pure-white" />
+      </button>
 
       {/* User Reserved Bookings status drawer overlay */}
       <MyBookingsModal 

@@ -11,17 +11,13 @@ interface HeaderProps {
   activeSection: string;
   onOpenMyBookings: () => void;
   bookingCount: number;
-  isAdminMode: boolean;
-  onToggleAdminMode: (admin: boolean) => void;
 }
 
 export default function Header({ 
   onNavClick, 
   activeSection, 
   onOpenMyBookings, 
-  bookingCount,
-  isAdminMode,
-  onToggleAdminMode
+  bookingCount
 }: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -90,23 +86,8 @@ export default function Header({
 
         {/* Header CTA & Actions */}
         <div className="flex items-center gap-4">
-          {/* Admin toggle visual element */}
-          <button
-            onClick={() => onToggleAdminMode(!isAdminMode)}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded border text-xs font-mono font-bold tracking-wider transition-all duration-200 ${
-              isAdminMode 
-                ? 'bg-electric-ruby/20 border-electric-ruby text-electric-ruby shadow-[0_0_10px_rgba(255,0,60,0.2)]'
-                : 'bg-surface-container-high border-surface-container-highest text-on-surface-variant hover:text-pure-white hover:border-on-surface-variant/40'
-            }`}
-            title={isAdminMode ? "Return to Player Lounge" : "Open Back-Office Deck"}
-          >
-            <Shield size={14} className={isAdminMode ? 'animate-pulse' : ''} />
-            <span className="hidden sm:inline">{isAdminMode ? 'CMD DECK (ADMIN)' : 'ADMIN DECK'}</span>
-            <span className="sm:hidden">{isAdminMode ? 'CMD' : 'ADM'}</span>
-          </button>
-
           {/* Active Bookings Micro-badge */}
-          {bookingCount > 0 && !isAdminMode && (
+          {bookingCount > 0 && (
             <button
               onClick={onOpenMyBookings}
               className="relative p-2 bg-surface-container-high hover:bg-surface-container-highest rounded border border-surface-container-highest transition-all duration-200"
@@ -119,14 +100,12 @@ export default function Header({
             </button>
           )}
 
-          {!isAdminMode && (
-            <button 
-              onClick={() => onNavClick('booking')}
-              className="hidden sm:block bg-electric-ruby text-pure-white font-headline text-lg font-bold px-5 py-1.5 rounded hover:bg-electric-ruby/80 active:scale-95 transition-all duration-200 shadow-[0_0_15px_rgba(255,0,60,0.35)]"
-            >
-              BOOK NOW
-            </button>
-          )}
+          <button 
+            onClick={() => onNavClick('booking')}
+            className="hidden sm:block bg-electric-ruby text-pure-white font-headline text-lg font-bold px-5 py-1.5 rounded hover:bg-electric-ruby/80 active:scale-95 transition-all duration-200 shadow-[0_0_15px_rgba(255,0,60,0.35)]"
+          >
+            BOOK NOW
+          </button>
 
           {/* Mobile Menu Toggle */}
           <button 
@@ -176,32 +155,17 @@ export default function Header({
                 <User size={16} /> MY BOOKINGS ({bookingCount})
               </button>
             )}
+
             <button
               onClick={() => {
-                onToggleAdminMode(!isAdminMode);
+                onNavClick('booking');
                 setIsMobileMenuOpen(false);
               }}
-              className={`w-full font-headline text-lg font-bold py-2.5 rounded border flex items-center justify-center gap-2 tracking-wider transition-colors duration-200 ${
-                isAdminMode
-                  ? 'bg-electric-ruby/20 border-electric-ruby text-electric-ruby'
-                  : 'bg-surface-container-high border-surface-container-highest text-pure-white hover:bg-surface-container-highest'
-              }`}
+              className="w-full bg-electric-ruby font-headline text-lg font-bold py-2.5 rounded hover:bg-electric-ruby/95 text-pure-white tracking-wider"
             >
-              <Shield size={16} className={isAdminMode ? 'animate-pulse' : ''} />
-              {isAdminMode ? 'PLAYER LOUNGE PORTAL' : 'ADMIN COMMAND DECK'}
+              BOOK STATION NOW
             </button>
 
-            {!isAdminMode && (
-              <button
-                onClick={() => {
-                  onNavClick('booking');
-                  setIsMobileMenuOpen(false);
-                }}
-                className="w-full bg-electric-ruby font-headline text-lg font-bold py-2.5 rounded hover:bg-electric-ruby/95 text-pure-white tracking-wider"
-              >
-                BOOK STATION NOW
-              </button>
-            )}
             <div className="flex items-center justify-center gap-2 pt-2 text-[10px] font-mono text-on-surface-variant/40">
               <span className="w-2 h-2 bg-emerald-500 rounded-full animate-ping"></span>
               <span>DEV SERVER ONLINE</span>
