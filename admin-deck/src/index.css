@@ -7,22 +7,23 @@
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
   /* Custom Theme Colors matched to Hotbox gaming */
-  --color-electric-ruby: #FF003C;
-  --color-deep-void: #000000;
-  --color-hyper-blue: #18066D;
-  --color-pure-white: #FFFFFF;
-  --color-surface-dim: #131313;
-  --color-surface-container-low: #1c1b1b;
-  --color-surface-container: #201f1f;
-  --color-surface-container-high: #2a2a2a;
-  --color-surface-container-highest: #353534;
-  --color-on-surface: #e5e2e1;
-  --color-on-surface-variant: #e9bcba;
+  --color-electric-ruby: #00FF66; /* Vibrant neon green */
+  --color-neon-green: #00FF66;
+  --color-deep-void: #030712;     /* Abyssal black-blue */
+  --color-hyper-blue: #2563EB;    /* Electric hyper blue */
+  --color-pure-white: #FFFFFF;    /* Clean white */
+  --color-surface-dim: #0B0F19;   /* Cyber space dark blue */
+  --color-surface-container-low: #0F172A;
+  --color-surface-container: #1E293B;
+  --color-surface-container-high: #334155;
+  --color-surface-container-highest: #475569;
+  --color-on-surface: #F8FAFC;
+  --color-on-surface-variant: #94A3B8;
 }
 
 /* Custom visual utilities */
 .neon-glow-ruby {
-  box-shadow: 0 0 15px rgba(255, 0, 60, 0.4);
+  box-shadow: 0 0 15px rgba(0, 255, 102, 0.4);
 }
 
 .hide-scrollbar::-webkit-scrollbar {

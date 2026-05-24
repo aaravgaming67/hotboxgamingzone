@@ -284,54 +284,54 @@ export default function App() {
 
   if (!isUnlocked) {
     return (
-      <div className="min-h-screen w-full py-16 px-4 flex flex-col items-center justify-center bg-black font-sans">
+      <div className="min-h-screen w-full py-16 px-4 flex flex-col items-center justify-center bg-deep-void font-sans">
         
         {/* Core Auth Panel */}
-        <div className="w-full max-w-md bg-[#131313] border border-[#FF003C]/30 p-8 rounded relative overflow-hidden shadow-[0_0_50px_rgba(255,0,60,0.15)]">
+        <div className="w-full max-w-md bg-surface-dim border border-electric-ruby/30 p-8 rounded relative overflow-hidden shadow-[0_0_50px_rgba(0,255,102,0.15)]">
           {/* Neon tactical corner frames */}
-          <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-[#FF003C]"></div>
-          <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-[#FF003C]"></div>
-          <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-[#FF003C]"></div>
-          <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-[#FF003C]"></div>
+          <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-electric-ruby"></div>
+          <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-electric-ruby"></div>
+          <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-electric-ruby"></div>
+          <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-electric-ruby"></div>
 
           <div className="text-center mb-8">
-            <div className="w-16 h-16 rounded-full bg-[#FF003C]/10 border border-[#FF003C]/30 mx-auto flex items-center justify-center text-[#FF003C] mb-4">
+            <div className="w-16 h-16 rounded-full bg-electric-ruby/10 border border-electric-ruby/30 mx-auto flex items-center justify-center text-electric-ruby mb-4">
               <ShieldAlert size={34} className="animate-pulse" />
             </div>
             <h2 className="font-headline text-3xl font-extrabold tracking-widest text-white uppercase">COMMAND GATEWAY</h2>
-            <p className="font-mono text-xs text-[#e9bcba]/70 mt-1.5 uppercase tracking-wider">ADMIN BACK-OFFICE OPERATIONS PANEL</p>
+            <p className="font-mono text-xs text-on-surface-variant mt-1.5 uppercase tracking-wider">ADMIN BACK-OFFICE OPERATIONS PANEL</p>
           </div>
 
           <form onSubmit={handleUnlock} className="space-y-4">
             <div>
-              <label className="block text-xs font-mono uppercase text-[#e9bcba] tracking-widest mb-2">Authority Signature (Passcode)</label>
+              <label className="block text-xs font-mono uppercase text-on-surface-variant tracking-widest mb-2">Authority Signature (Passcode)</label>
               <input 
                 type="password"
                 placeholder="ENTER SECURE SECURITY PIN"
                 value={passcode}
                 onChange={(e) => setPasscode(e.target.value)}
-                className="w-full bg-black border border-[#353534] text-white font-mono placeholder-[#e9bcba]/30 rounded px-4 py-3 text-sm focus:outline-none focus:border-[#FF003C] focus:ring-1 focus:ring-[#FF003C] transition-all duration-200"
+                className="w-full bg-deep-void border border-surface-container-highest text-white font-mono placeholder-on-surface-variant/30 rounded px-4 py-3 text-sm focus:outline-none focus:border-electric-ruby focus:ring-1 focus:ring-electric-ruby transition-all duration-200"
                 autoFocus
               />
-              <span className="block mt-2 text-[10px] text-[#e9bcba]/40 font-mono italic">Demo bypasses: use PIN &quot;admin&quot;, &quot;hotbox&quot; or press Bypass below.</span>
+              <span className="block mt-2 text-[10px] text-on-surface-variant/40 font-mono italic">Demo bypasses: use PIN &quot;admin&quot;, &quot;hotbox&quot; or press Bypass below.</span>
             </div>
 
             {errorFeedback && (
-              <p className="text-xs font-mono text-[#FF003C] bg-[#FF003C]/10 p-2 border border-[#FF003C]/20 rounded text-center">
+              <p className="text-xs font-mono text-white bg-red-500/20 p-2 border border-red-500/30 rounded text-center">
                 {errorFeedback}
               </p>
             )}
 
             <button
               type="submit"
-              className="w-full py-3 bg-[#FF003C] hover:bg-[#FF003C]/80 text-white font-headline text-lg font-bold tracking-widest rounded transition-all duration-200 shadow-[0_0_15px_rgba(255,0,60,0.3)] cursor-pointer"
+              className="w-full py-3 bg-electric-ruby hover:bg-hyper-blue hover:text-white text-deep-void font-headline text-lg font-bold tracking-widest rounded transition-all duration-200 shadow-[0_0_15px_rgba(0,255,102,0.3)] cursor-pointer"
             >
               DECRYPT COMMAND HUD
             </button>
           </form>
 
           {/* Quick lock override bypass */}
-          <div className="mt-8 pt-4 border-t border-[#201f1f] text-center">
+          <div className="mt-8 pt-4 border-t border-surface-container-low text-center">
             <button 
               onClick={() => {
                 setIsUnlocked(true);
@@ -339,14 +339,14 @@ export default function App() {
                 setSuccessFeedback('Bypass mode engaged. Standard operations unlocked.');
                 setTimeout(() => setSuccessFeedback(null), 3000);
               }}
-              className="hover:text-[#FF003C] transition-colors inline-flex items-center gap-1.5 font-mono text-xs text-[#e9bcba]/50 font-bold"
+              className="hover:text-electric-ruby transition-colors inline-flex items-center gap-1.5 font-mono text-xs text-on-surface-variant/50 font-bold"
             >
               <Unlock size={13} /> ENGAGE LOCKPORT BYPASS
             </button>
           </div>
         </div>
 
-        <p className="mt-12 font-mono text-[10px] text-[#e9bcba]/30 text-center uppercase tracking-widest">
+        <p className="mt-12 font-mono text-[10px] text-on-surface-variant/30 text-center uppercase tracking-widest">
           HOTBOX ARCADE INC © 2026. ALL METRICS AND SESSIONS SECURED VIA DATASTORE CLOUD RULES.
         </p>
       </div>
@@ -354,24 +354,24 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white p-4 md:p-8 lg:p-10 font-sans selection:bg-[#FF003C] selection:text-white">
+    <div className="min-h-screen bg-deep-void text-white p-4 md:p-8 lg:p-10 font-sans selection:bg-electric-ruby selection:text-deep-void">
       
       {/* HUD HEADER PANEL */}
-      <header className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 mb-8 border-b border-[#2a2a2a] pb-6">
+      <header className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 mb-8 border-b border-surface-container-high pb-6">
         <div>
           <div className="flex items-center gap-3">
-            <div className="px-2.5 py-0.5 bg-[#FF003C] font-mono text-[10px] font-bold text-white rounded uppercase tracking-wider animate-pulse">
+            <div className="px-2.5 py-0.5 bg-electric-ruby font-mono text-[10px] font-bold text-deep-void rounded uppercase tracking-wider animate-pulse">
               LIVE NETWORK CONNECTED
             </div>
-            <span className="font-mono text-xs text-[#e9bcba]/60 flex items-center gap-1">
-              <Terminal size={12} className="text-[#FF003C]" /> ID: hotboxgaming-51dc2.firestore
+            <span className="font-mono text-xs text-on-surface-variant/60 flex items-center gap-1">
+              <Terminal size={12} className="text-electric-ruby" /> ID: hotboxgaming-51dc2.firestore
             </span>
           </div>
 
           <h1 className="font-headline text-4xl sm:text-5xl font-extrabold tracking-wider text-white uppercase mt-1">
-            HOTBOX GAMING <span className="text-[#FF003C]">BACK-OFFICE</span>
+            HOTBOX GAMING <span className="text-electric-ruby">BACK-OFFICE</span>
           </h1>
-          <p className="text-sm font-sans text-[#e9bcba]/80 mt-1 max-w-2xl leading-normal">
+          <p className="text-sm font-sans text-on-surface-variant mt-1 max-w-2xl leading-normal">
             Stand-alone real-time player reservation administrator ledger. Track tournament profiles, update cash settlements, and manage gameplay status instantly.
           </p>
         </div>
@@ -379,16 +379,16 @@ export default function App() {
         <div className="flex flex-wrap items-center gap-3">
           <button
             onClick={handleCreateMockBooking}
-            className="flex items-center gap-2 bg-[#201f1f] border border-[#353534] hover:bg-[#2a2a2a] text-white font-headline text-base font-bold px-4 py-2.5 rounded transition-all cursor-pointer"
+            className="flex items-center gap-2 bg-surface-container border border-surface-container-highest hover:bg-surface-container-high text-white font-headline text-base font-bold px-4 py-2.5 rounded transition-all cursor-pointer"
             title="Simulate a real player reservation logging"
           >
-            <Play size={15} className="text-emerald-500 fill-emerald-500 animate-pulse" />
+            <Play size={15} className="text-[#00FF66] fill-[#00FF66] animate-pulse" />
             SYNTHESIZE MOCK BOOKING
           </button>
 
           <button
             onClick={handleExportCSV}
-            className="flex items-center gap-2 bg-[#201f1f] border border-[#353534] hover:bg-[#2a2a2a] text-[#e9bcba] font-mono text-xs font-bold px-4 py-2.5 rounded transition-all cursor-pointer"
+            className="flex items-center gap-2 bg-surface-container border border-surface-container-highest hover:bg-surface-container-high text-on-surface-variant font-mono text-xs font-bold px-4 py-2.5 rounded transition-all cursor-pointer"
             title="Download fully typed CSV datasheet of current Firestore tables"
           >
             <Download size={14} />
@@ -400,7 +400,7 @@ export default function App() {
               setIsUnlocked(false);
               setPasscode('');
             }}
-            className="flex items-center gap-1.5 bg-[#201f1f] border border-[#353534] hover:border-[#FF003C]/50 hover:text-[#FF003C] text-[#e9bcba]/70 font-mono text-xs font-bold px-3 py-2.5 rounded transition-all cursor-pointer"
+            className="flex items-center gap-1.5 bg-surface-container border border-surface-container-highest hover:border-electric-ruby/50 hover:text-electric-ruby text-on-surface-variant font-mono text-xs font-bold px-3 py-2.5 rounded transition-all cursor-pointer"
           >
             <LogOut size={13} />
             SECURE CONSOLE
@@ -410,12 +410,12 @@ export default function App() {
 
       {/* FEEDBACK STATUS OVERLAYS */}
       {errorFeedback && (
-        <div className="mb-6 bg-[#FF003C]/10 border border-[#FF003C]/30 p-4 rounded flex justify-between items-center text-sm font-mono text-[#FF003C]">
-          <div className="flex items-center gap-2.0">
+        <div className="mb-6 bg-red-950/20 border border-red-500/30 p-4 rounded flex justify-between items-center text-sm font-mono text-red-400">
+          <div className="flex items-center gap-2">
             <ShieldAlert size={18} />
             <span>{errorFeedback}</span>
           </div>
-          <button onClick={() => setErrorFeedback(null)} className="text-white hover:text-[#FF003C] px-2 py-1 font-bold">
+          <button onClick={() => setErrorFeedback(null)} className="text-white hover:text-red-400 px-2 py-1 font-bold">
             CONFIRM
           </button>
         </div>
@@ -437,10 +437,10 @@ export default function App() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
         
         {/* Total revenue */}
-        <div className="bg-[#131313] border border-[#353534] rounded p-5 relative overflow-hidden group">
+        <div className="bg-surface-dim border border-surface-container-highest rounded p-5 relative overflow-hidden group">
           <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-emerald-500/5 to-transparent rounded-bl-full pointer-events-none"></div>
           <div className="flex justify-between items-start mb-3">
-            <span className="font-mono text-xs text-[#e9bcba]/50 tracking-wider">SECURE SETTLED CASH</span>
+            <span className="font-mono text-xs text-on-surface-variant/50 tracking-wider">SECURE SETTLED CASH</span>
             <div className="w-8 h-8 rounded bg-emerald-500/10 flex items-center justify-center text-emerald-500">
               <CircleDollarSign size={18} />
             </div>
@@ -459,37 +459,37 @@ export default function App() {
         </div>
 
         {/* Core players count */}
-        <div className="bg-[#131313] border border-[#353534] rounded p-5 relative overflow-hidden group">
-          <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#FF003C]/5 to-transparent rounded-bl-full pointer-events-none"></div>
+        <div className="bg-surface-dim border border-surface-container-highest rounded p-5 relative overflow-hidden group">
+          <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-electric-ruby/5 to-transparent rounded-bl-full pointer-events-none"></div>
           <div className="flex justify-between items-start mb-3">
-            <span className="font-mono text-xs text-[#e9bcba]/50 tracking-wider">RESERVATION LEDGER</span>
-            <div className="w-8 h-8 rounded bg-[#FF003C]/10 flex items-center justify-center text-[#FF003C]">
+            <span className="font-mono text-xs text-on-surface-variant/50 tracking-wider">RESERVATION LEDGER</span>
+            <div className="w-8 h-8 rounded bg-electric-ruby/10 flex items-center justify-center text-electric-ruby">
               <Users size={18} />
             </div>
           </div>
           <p className="font-headline text-3xl font-extrabold text-white tracking-wide">
-            {stats.activeCount} <span className="text-xs font-sans font-normal text-[#e9bcba]/40">ACTIVE / {stats.totalBookingCount} HISTORY</span>
+            {stats.activeCount} <span className="text-xs font-sans font-normal text-on-surface-variant/40">ACTIVE / {stats.totalBookingCount} HISTORY</span>
           </p>
           <div className="mt-2 flex items-center gap-1.5 font-mono text-[10px]">
             <span className="w-2 h-2 bg-emerald-500 rounded-full animate-ping"></span>
-            <span className="text-[#e9bcba]/60">
+            <span className="text-on-surface-variant/60">
               {stats.completedCount} DONE // {stats.cancelledCount} CANCELLED
             </span>
           </div>
         </div>
 
         {/* Rig utilization */}
-        <div className="bg-[#131313] border border-[#353534] rounded p-5 relative overflow-hidden">
+        <div className="bg-surface-dim border border-surface-container-highest rounded p-5 relative overflow-hidden">
           <div className="flex justify-between items-start mb-3">
-            <span className="font-mono text-xs text-[#e9bcba]/50 tracking-wider">240HZ PRO RIG DEMAND</span>
+            <span className="font-mono text-xs text-on-surface-variant/50 tracking-wider">240HZ PRO RIG DEMAND</span>
             <div className="w-8 h-8 rounded bg-indigo-500/10 flex items-center justify-center text-indigo-400">
               <Monitor size={18} />
             </div>
           </div>
           <p className="font-headline text-3xl font-extrabold text-white tracking-wide">
-            {stats.pcCount} <span className="text-xs font-mono text-[#e9bcba]/30">COMMITS</span>
+            {stats.pcCount} <span className="text-xs font-mono text-on-surface-variant/30">COMMITS</span>
           </p>
-          <div className="mt-4 bg-[#1c1b1b] h-1 w-full rounded-full overflow-hidden">
+          <div className="mt-4 bg-surface-container-low h-1 w-full rounded-full overflow-hidden">
             <div 
               className="bg-indigo-500 h-full transition-all duration-500" 
               style={{ width: `${stats.totalBookingCount > 0 ? (stats.pcCount / stats.totalBookingCount) * 100 : 0}%` }}
@@ -498,17 +498,17 @@ export default function App() {
         </div>
 
         {/* PS5 lounge */}
-        <div className="bg-[#131313] border border-[#353534] rounded p-5 relative overflow-hidden">
+        <div className="bg-surface-dim border border-surface-container-highest rounded p-5 relative overflow-hidden">
           <div className="flex justify-between items-start mb-3">
-            <span className="font-mono text-xs text-[#e9bcba]/50 tracking-wider">PS5 ARENA DEMAND</span>
+            <span className="font-mono text-xs text-on-surface-variant/50 tracking-wider">PS5 ARENA DEMAND</span>
             <div className="w-8 h-8 rounded bg-purple-500/10 flex items-center justify-center text-purple-400">
               <Gamepad2 size={18} />
             </div>
           </div>
           <p className="font-headline text-3xl font-extrabold text-white tracking-wide">
-            {stats.ps5Count} <span className="text-xs font-mono text-[#e9bcba]/30">COMMITS</span>
+            {stats.ps5Count} <span className="text-xs font-mono text-on-surface-variant/30">COMMITS</span>
           </p>
-          <div className="mt-4 bg-[#1c1b1b] h-1 w-full rounded-full overflow-hidden">
+          <div className="mt-4 bg-surface-container-low h-1 w-full rounded-full overflow-hidden">
             <div 
               className="bg-purple-500 h-full transition-all duration-500" 
               style={{ width: `${stats.totalBookingCount > 0 ? (stats.ps5Count / stats.totalBookingCount) * 100 : 0}%` }}
@@ -519,12 +519,12 @@ export default function App() {
       </div>
 
       {/* FILTER & LOOKUP DECK */}
-      <div className="bg-[#131313] border border-[#2a2a2a] rounded p-5 mb-6">
+      <div className="bg-surface-dim border border-surface-container-high rounded p-5 mb-6">
         <div className="flex flex-col xl:flex-row gap-4 items-stretch xl:items-center justify-between">
           
           {/* Dynamic Search */}
           <div className="relative flex-1">
-            <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-[#e9bcba]/40 pointer-events-none">
+            <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-on-surface-variant/40 pointer-events-none">
               <Search size={18} />
             </span>
             <input 
