@@ -16,8 +16,15 @@ const firebaseConfig = {
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 
-// Initialize analytics safely (helps in serverless/SSR or iframe situations)
-export const analytics = typeof window !== 'undefined' ? getAnalytics(app) : null;
+// Initialize analytics safely (does not crash if indexedDB or analytics are blocked/unsupported)
+export let analytics: any = null;
+if (typeof window !== 'undefined') {
+  try {
+    analytics = getAnalytics(app);
+  } catch (err) {
+    console.warn("Firebase Analytics initialization skipped/unsupported:", err);
+  }
+}
 
 // Initialize Firestore
 export const db = getFirestore(app);
