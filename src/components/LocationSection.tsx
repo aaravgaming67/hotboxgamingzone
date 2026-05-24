@@ -15,7 +15,7 @@ export default function LocationSection() {
     setTimeout(() => setCopiedType(null), 2000);
   };
 
-  const addressText = "C/3- 201, Sai Kanwal Complex Near DN Nagar metro station exit no 6, Lane opp Westside Indira Nagar, Andheri West Mumbai - 400053";
+  const addressText = "Shop No. 104, Arcadia Shopping Centre, Hiranandani Estate, Thane West, Maharashtra - 400607";
 
   return (
     <section id="location" className="py-24 px-6 md:px-20 bg-deep-void border-t border-surface-container-highest scroll-mt-20">
@@ -31,14 +31,14 @@ export default function LocationSection() {
 
             <div className="space-y-8 md:space-y-10">
               
-              {/* Mumbai Lounge */}
+              {/* Arcadia Lounge */}
               <div className="flex gap-4 md:gap-6 items-start relative group">
                 <div className="w-10 h-10 rounded-full bg-electric-ruby/10 border border-electric-ruby/30 flex items-center justify-center text-electric-ruby shrink-0 mt-1">
                   <MapPin size={20} />
                 </div>
                 <div>
                   <div className="flex items-center gap-2">
-                    <h4 className="font-headline text-xl text-pure-white uppercase font-bold tracking-wider">MUMBAI LOUNGE</h4>
+                    <h4 className="font-headline text-xl text-pure-white uppercase font-bold tracking-wider">ARCADIA LOUNGE</h4>
                     <button 
                       onClick={() => handleCopyText(addressText, 'address')}
                       className="text-on-surface-variant/40 hover:text-white transition-colors py-0.5 px-1.5 rounded bg-white/5 hover:bg-white/10"
@@ -48,7 +48,7 @@ export default function LocationSection() {
                     </button>
                   </div>
                   <p className="text-on-surface-variant leading-relaxed text-sm md:text-base mt-2 max-w-sm">
-                    C/3- 201, Sai Kanwal Complex Near DN Nagar metro station exit no 6, Lane opp Westside Indira Nagar, Andheri West Mumbai - 400053
+                    Shop No. 104, Arcadia Shopping Centre, Hiranandani Estate, Thane West, Maharashtra - 400607
                   </p>
                 </div>
               </div>
@@ -125,20 +125,20 @@ export default function LocationSection() {
               <div className="w-14 h-14 bg-electric-ruby/15 border-2 border-electric-ruby rounded-full animate-ping" />
               
               {/* Inner Focus Solid point */}
-              <div className="absolute w-4 h-4 bg-electric-ruby rounded-full shadow-[0_0_20px_rgba(255,0,60,1)] flex items-center justify-center">
+              <div className="absolute w-4 h-4 bg-electric-ruby rounded-full shadow-[0_0_20px_rgba(0,255,102,1)] flex items-center justify-center">
                 <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
               </div>
 
               {/* Grid calibration flags */}
               <div className="absolute top-1/2 left-[54%] transform -translate-y-1/2 flex flex-col font-mono text-[9px] bg-black/75 border border-surface-container-highest p-1.5 rounded select-none shadow text-left">
                 <span className="text-white font-bold opacity-90">HOTBOX HQ</span>
-                <span className="text-on-surface-variant/70">W. INDIRA_NAGAR</span>
+                <span className="text-on-surface-variant/70">HIRANANDANI ESTATE</span>
               </div>
             </div>
 
             {/* Dynamic visual grids corners */}
             <div className="absolute top-4 left-4 font-mono text-[9px] text-on-surface-variant/30 leading-none pointer-events-none">
-              GRID: E_72.827_N_19.124
+              GRID: N_19.255_E_72.977
             </div>
             <div className="absolute bottom-4 right-4 font-mono text-[9px] text-on-surface-variant/30 leading-none pointer-events-none">
               CALIBRATION: STABLE
@@ -147,7 +147,7 @@ export default function LocationSection() {
             {/* Active view anchor links */}
             <div className="absolute bottom-4 left-4 z-20">
               <a 
-                href="https://maps.google.com/?q= Sai+Kanwal+Complex+Andheri+West+Mumbai+400053"
+                href="https://maps.google.com/?q=Arcadia+Shopping+Centre+Hiranandani+Estate+Thane+West+400607"
                 target="_blank"
                 rel="noreferrer"
                 className="bg-black/90 hover:bg-electric-ruby hover:text-white border border-surface-container-highest py-1.5 px-3 rounded flex items-center gap-1.5 font-mono text-[10px] text-on-surface-variant transition-all select-all duration-300 pointer-events-auto"

@@ -233,10 +233,10 @@ export default function App() {
       {/* FAB - Booking direct shortcut */}
       <button 
         onClick={() => handleScrollToSection('booking')}
-        className="fixed bottom-6 right-6 z-[90] p-4 bg-electric-ruby hover:scale-110 hover:rotate-6 active:scale-95 text-pure-white rounded-full shadow-[0_0_20px_rgba(255,0,60,0.6)] hover:shadow-[0_0_30px_rgba(255,0,60,0.9)] transition-all duration-300"
+        className="fixed bottom-6 right-6 z-[90] p-4 bg-electric-ruby hover:scale-110 hover:rotate-6 active:scale-95 text-deep-void rounded-full shadow-[0_0_20px_rgba(0,255,102,0.6)] hover:shadow-[0_0_30px_rgba(0,255,102,0.9)] transition-all duration-300"
         title="Reserve Station Now"
       >
-        <Bolt size={24} className="fill-pure-white" />
+        <Bolt size={24} className="fill-deep-void" />
       </button>
 
       {/* User Reserved Bookings status drawer overlay */}

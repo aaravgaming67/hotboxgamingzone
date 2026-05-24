@@ -162,7 +162,7 @@ export default function TournamentsSection() {
               </div>
               <button 
                 onClick={() => setRegisteringTourneyId(tournaments[0].id)}
-                className="bg-electric-ruby text-white font-headline text-base font-bold px-6 py-2.5 rounded hover:brightness-110 active:scale-95 transition-all flex items-center gap-1.5 shadow-[0_0_15px_rgba(255,0,60,0.3)] uppercase"
+                className="bg-electric-ruby text-deep-void font-headline text-base font-bold px-6 py-2.5 rounded hover:brightness-110 active:scale-95 transition-all flex items-center gap-1.5 shadow-[0_0_15px_rgba(0,255,102,0.3)] uppercase"
               >
                 DEPLOY REGISTER <ArrowUpRight size={16} />
               </button>
@@ -301,7 +301,7 @@ export default function TournamentsSection() {
                   </button>
                   <button 
                     type="submit"
-                    className="bg-electric-ruby hover:brightness-110 text-white font-headline text-base font-bold py-2.5 px-6 rounded transition-all shadow-[0_0_10px_rgba(255,0,60,0.3)] uppercase"
+                    className="bg-electric-ruby hover:brightness-110 text-deep-void font-headline text-base font-bold py-2.5 px-6 rounded transition-all shadow-[0_0_10px_rgba(0,255,102,0.3)] uppercase"
                   >
                     INITIATE INSCRIPTION
                   </button>

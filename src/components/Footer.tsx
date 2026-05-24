@@ -41,7 +41,7 @@ export default function Footer() {
               HOTBOX
             </div>
             <p className="text-on-surface-variant text-sm leading-relaxed mb-6 font-normal">
-              Mumbai's premier high-end gaming sanctuary. Pushing the boundaries of competitive play and immersion through elite hardware and technical excellence.
+              Arcadia's premier high-end gaming sanctuary. Pushing the boundaries of competitive play and immersion through elite hardware and technical excellence.
             </p>
             
             {/* Social credentials icons */}
@@ -73,7 +73,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a onClick={() => triggerHudNotify("Scanning active mechanical & server engineer vacancies near Mumbai...")} className="font-mono text-xs text-on-surface-variant hover:text-hyper-blue transition-colors uppercase font-medium cursor-pointer block">
+                <a onClick={() => triggerHudNotify("Scanning active mechanical & server engineer vacancies near Arcadia...")} className="font-mono text-xs text-on-surface-variant hover:text-hyper-blue transition-colors uppercase font-medium cursor-pointer block">
                   CAREERS
                 </a>
               </li>

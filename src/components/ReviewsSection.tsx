@@ -56,15 +56,15 @@ export default function ReviewsSection() {
               THE INTEL & <span className="text-electric-ruby">REVIEWS</span>
             </h2>
             <p className="font-sans text-on-surface-variant text-sm mt-1 max-w-xl">
-              Don't take our word for it. Read verified logs written directly by professional esports competitors and casual players around Mumbai.
+              Don't take our word for it. Read verified logs written directly by professional esports competitors and casual players around Arcadia.
             </p>
           </div>
 
           <button
             onClick={() => setShowAddReview(true)}
-            className="bg-electric-ruby hover:brightness-110 text-white font-headline text-base font-bold py-2.5 px-6 rounded transition-all flex items-center gap-2 shadow-[0_0_15px_rgba(255,0,60,0.25)]"
+            className="bg-electric-ruby hover:brightness-110 text-deep-void font-headline text-base font-bold py-2.5 px-6 rounded transition-all flex items-center gap-2 shadow-[0_0_15px_rgba(0,255,102,0.25)]"
           >
-            <MessageSquarePlus size={16} />
+            <MessageSquarePlus size={16} className="text-deep-void" />
             TRANSMIT DEBRIEF
           </button>
         </div>
@@ -219,7 +219,7 @@ export default function ReviewsSection() {
                 </button>
                 <button 
                   type="submit"
-                  className="bg-electric-ruby hover:brightness-110 text-white font-headline text-base font-bold py-2.5 px-6 rounded transition-all shadow-[0_0_10px_rgba(255,0,60,0.3)] uppercase"
+                  className="bg-electric-ruby hover:brightness-110 text-deep-void font-headline text-base font-bold py-2.5 px-6 rounded transition-all shadow-[0_0_10px_rgba(0,255,102,0.3)] uppercase"
                 >
                   TRANSMIT TELEMETRY LOG
                 </button>

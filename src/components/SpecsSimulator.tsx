@@ -270,7 +270,7 @@ export default function SpecsSimulator() {
               </div>
               <a 
                 href="#booking"
-                className="w-full sm:w-auto bg-electric-ruby text-pure-white font-headline font-bold text-base px-6 py-3 rounded hover:bg-electric-ruby/90 active:scale-95 transition-all text-center flex items-center justify-center gap-1.5 shadow-[0_0_15px_rgba(255,0,60,0.3)]"
+                className="w-full sm:w-auto bg-electric-ruby text-deep-void font-headline font-bold text-base px-6 py-3 rounded hover:bg-electric-ruby/90 active:scale-95 transition-all text-center flex items-center justify-center gap-1.5 shadow-[0_0_15px_rgba(0,255,102,0.3)]"
               >
                 BOOK THIS RIG NOW
                 <span>→</span>

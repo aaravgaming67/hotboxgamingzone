@@ -43,7 +43,7 @@ export default function Header({
     <header 
       className={`fixed top-0 left-0 w-full z-[100] transition-all duration-300 ${
         isScrolled 
-          ? 'py-3 bg-black/95 backdrop-blur-md border-b border-surface-container-highest shadow-[0_4px_25px_rgba(255,0,60,0.15)]' 
+          ? 'py-3 bg-black/95 backdrop-blur-md border-b border-surface-container-highest shadow-[0_4px_25px_rgba(0,255,102,0.15)]' 
           : 'py-5 bg-deep-void/90 backdrop-blur-sm border-b border-surface-container-high'
       }`}
     >
@@ -53,7 +53,7 @@ export default function Header({
           onClick={() => onNavClick('hero')} 
           className="flex items-center gap-2 cursor-pointer group"
         >
-          <div className="w-8 h-8 rounded bg-electric-ruby flex items-center justify-center font-bold text-lg text-pure-white transition-transform group-hover:rotate-12">H</div>
+          <div className="w-8 h-8 rounded bg-electric-ruby flex items-center justify-center font-bold text-lg text-deep-void transition-transform group-hover:rotate-12">H</div>
           <span className="font-headline text-2xl font-extrabold tracking-tighter text-electric-ruby group-hover:text-pure-white transition-colors duration-300">
             HOTBOX GAMING
           </span>
@@ -94,7 +94,7 @@ export default function Header({
               title="My Reserved Stations"
             >
               <User size={18} className="text-electric-ruby" />
-              <span className="absolute -top-1 -right-1 w-4 h-4 bg-electric-ruby text-[9px] font-mono text-pure-white rounded-full flex items-center justify-center font-bold animate-bounce">
+              <span className="absolute -top-1 -right-1 w-4 h-4 bg-electric-ruby text-[9px] font-mono text-deep-void rounded-full flex items-center justify-center font-bold animate-bounce">
                 {bookingCount}
               </span>
             </button>
@@ -102,7 +102,7 @@ export default function Header({
 
           <button 
             onClick={() => onNavClick('booking')}
-            className="hidden sm:block bg-electric-ruby text-pure-white font-headline text-lg font-bold px-5 py-1.5 rounded hover:bg-electric-ruby/80 active:scale-95 transition-all duration-200 shadow-[0_0_15px_rgba(255,0,60,0.35)]"
+            className="hidden sm:block bg-electric-ruby text-deep-void font-headline text-lg font-bold px-5 py-1.5 rounded hover:bg-electric-ruby/80 active:scale-95 transition-all duration-200 shadow-[0_0_15px_rgba(0,255,102,0.35)]"
           >
             BOOK NOW
           </button>

@@ -147,7 +147,7 @@ export default function BookingSection({
             RESERVE YOUR <span className="text-electric-ruby font-extrabold shadow-sm">STATION</span>
           </h2>
           <p className="font-sans text-on-surface-variant text-base md:text-lg mb-8 leading-relaxed font-normal">
-            Secure a high-performance 240Hz PC gaming setup at Mumbai's premier lounge. Whether training with your squad or gaming solo, choose your hours and book instantly. No complex terms.
+            Secure a high-performance 240Hz PC gaming setup at Arcadia's premier lounge. Whether training with your squad or gaming solo, choose your hours and book instantly. No complex terms.
           </p>
 
           <ul className="space-y-4 mb-10">
@@ -348,7 +348,7 @@ export default function BookingSection({
                   </span>
                   <span className="text-[10px] font-mono text-on-surface-variant/60 uppercase">Instant Payment</span>
                   {paymentMethod === 'razorpay' && (
-                    <div className="absolute inset-0 border-2 border-electric-ruby rounded-lg pointer-events-none shadow-[0_0_15px_rgba(255,0,60,0.3)] duration-200" />
+                    <div className="absolute inset-0 border-2 border-electric-ruby rounded-lg pointer-events-none shadow-[0_0_15px_rgba(0,255,102,0.3)] duration-200" />
                   )}
                 </label>
                 
@@ -366,7 +366,7 @@ export default function BookingSection({
                   </span>
                   <span className="text-[10px] font-mono text-on-surface-variant/60 uppercase">Pay at Lounge</span>
                   {paymentMethod === 'after_booking' && (
-                    <div className="absolute inset-0 border-2 border-electric-ruby rounded-lg pointer-events-none shadow-[0_0_15px_rgba(255,0,60,0.3)] duration-200" />
+                    <div className="absolute inset-0 border-2 border-electric-ruby rounded-lg pointer-events-none shadow-[0_0_15px_rgba(0,255,102,0.3)] duration-200" />
                   )}
                 </label>
               </div>
@@ -374,7 +374,7 @@ export default function BookingSection({
 
             <button 
               type="submit"
-              className="w-full bg-electric-ruby text-pure-white font-headline text-xl font-bold py-4 rounded hover:brightness-110 active:scale-95 transition-all duration-200 uppercase tracking-wide italic shadow-[0_0_15px_rgba(255,0,60,0.4)] md:cursor-pointer"
+              className="w-full bg-electric-ruby text-deep-void font-headline text-xl font-bold py-4 rounded hover:brightness-110 active:scale-95 transition-all duration-200 uppercase tracking-wide italic shadow-[0_0_15px_rgba(0,255,102,0.4)] md:cursor-pointer"
             >
               {paymentMethod === 'razorpay' ? 'PROCEED TO PAY WITH RAZORPAY' : 'CONFIRM RESERVATION'}
             </button>
@@ -396,7 +396,7 @@ export default function BookingSection({
               </button>
               <div className="flex items-center justify-between">
                 <div>
-                  <h4 className="font-sans text-xs font-bold text-blue-400 uppercase tracking-wide">MUMBAI GAMING LOUNGE</h4>
+                  <h4 className="font-sans text-xs font-bold text-blue-400 uppercase tracking-wide">ARCADIA GAMING LOUNGE</h4>
                   <p className="text-xl font-semibold mt-1">₹{estimatedCost}.00</p>
                 </div>
                 <div className="text-right">
@@ -610,7 +610,7 @@ export default function BookingSection({
 
             <button 
               onClick={closeOutcomeModal}
-              className="w-full bg-electric-ruby text-white font-headline text-base font-bold py-3 rounded active:scale-95 transition-all uppercase cursor-pointer"
+              className="w-full bg-electric-ruby text-deep-void font-headline text-base font-bold py-3 rounded active:scale-95 transition-all uppercase cursor-pointer"
             >
               CLOSE
             </button>

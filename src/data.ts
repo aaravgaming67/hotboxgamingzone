@@ -59,7 +59,7 @@ export const INITIAL_STATIONS: GamingStation[] = [
 export const INITIAL_TOURNAMENTS: Tournament[] = [
   {
     id: 'tourney-1',
-    title: 'MUMBAI VALORANT CLASH',
+    title: 'ARCADIA VALORANT CLASH',
     game: 'Valorant',
     date: '2026-06-12',
     time: '14:00',
@@ -67,7 +67,7 @@ export const INITIAL_TOURNAMENTS: Tournament[] = [
     format: '5v5 Double Elimination',
     slotsTotal: 16,
     slotsRegistered: 12,
-    participants: ['Sky Esports Clan', 'A1 Gaming', 'Vanguard Esports', 'Mumbai Mavericks'],
+    participants: ['Sky Esports Clan', 'A1 Gaming', 'Vanguard Esports', 'Arcadia Mavericks'],
     status: 'registering'
   },
   {
@@ -93,7 +93,7 @@ export const INITIAL_TOURNAMENTS: Tournament[] = [
     format: '5v5 Single Elimination',
     slotsTotal: 16,
     slotsRegistered: 8,
-    participants: ['Delta Squad', 'Mumbai Kings', 'FragMasters'],
+    participants: ['Delta Squad', 'Arcadia Kings', 'FragMasters'],
     status: 'registering'
   }
 ];

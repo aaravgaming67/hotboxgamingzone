@@ -53,7 +53,7 @@ export default function Hero({ onReserveClick, onExploreClick }: HeroProps) {
         <div className="flex items-center gap-2 mb-4 bg-electric-ruby/10 border border-electric-ruby/30 py-1.5 px-4 rounded-full animate-pulse">
           <span className="w-1.5 h-1.5 rounded-full bg-electric-ruby animate-ping"></span>
           <p className="font-mono text-xs text-electric-ruby font-semibold tracking-[0.35em] uppercase">
-            ESTABLISHED 2024 • MUMBAI ELITE
+            ESTABLISHED 2024 • ARCADIA ELITE
           </p>
         </div>
 
@@ -64,14 +64,14 @@ export default function Hero({ onReserveClick, onExploreClick }: HeroProps) {
 
         {/* Description */}
         <p className="font-sans text-base sm:text-lg md:text-xl max-w-2xl mx-auto text-on-surface-variant mb-10 leading-relaxed font-normal">
-          Mumbai's premier high-octane gaming destination. Offering state-of-the-art gaming PCs and PlayStation 5 bays for professional and casual players.
+          Arcadia's premier high-octane gaming destination. Offering state-of-the-art gaming PCs and PlayStation 5 bays for professional and casual players.
         </p>
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto">
           <button 
             onClick={onReserveClick}
-            className="w-full sm:w-auto bg-electric-ruby text-pure-white font-headline text-xl font-bold px-10 py-4 rounded hover:brightness-110 active:scale-95 neon-glow-ruby transition-all duration-300 uppercase tracking-wide"
+            className="w-full sm:w-auto bg-electric-ruby text-deep-void font-headline text-xl font-bold px-10 py-4 rounded hover:brightness-110 active:scale-95 neon-glow-ruby transition-all duration-300 uppercase tracking-wide"
           >
             RESERVE YOUR STATION
           </button>
@@ -107,7 +107,7 @@ export default function Hero({ onReserveClick, onExploreClick }: HeroProps) {
       {/* Decorative Grid Grid Alignments */}
       <div className="absolute bottom-10 right-6 md:right-20 hidden lg:flex items-center gap-2 text-on-surface-variant/30 select-none">
         <Radio size={14} className="animate-spin text-electric-ruby opacity-40" />
-        <span className="font-mono text-[9px] tracking-widest uppercase">MUMBAI_NODE // 19.12N 72.82E</span>
+        <span className="font-mono text-[9px] tracking-widest uppercase">ARCADIA_NODE // INTEGRAL SENSOR STATE</span>
       </div>
     </section>
   );
